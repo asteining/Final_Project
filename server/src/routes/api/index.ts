@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import gameRoutes from './gameRoutes.js';
+import tradeRoutes from './tradeRoutes.js';
 const router = Router();
 
-router.use('/game', gameRoutes);
+router.use('/trade', tradeRoutes);
 
 export default router;

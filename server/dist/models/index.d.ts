@@ -1,3 +1,3 @@
-import { IWord, Word } from './Word.js';
-import { IGame, Game } from './Game.js';
-export { IWord, Word, IGame, Game };
+import { Trade } from './Trade.js';
+import { User } from './User.js';
+export { Trade, User };

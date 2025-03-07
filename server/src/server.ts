@@ -1,7 +1,8 @@
 import express from 'express';
-
 import db from './config/connection.js';
 import routes from './routes/index.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 await db();
 
@@ -14,8 +15,7 @@ app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('../client/dist'));
-
-   app.get('*', (_req, res) => {
+  app.get('*', (_req, res) => {
     res.sendFile('../client/dist/index.html');
   });
 }

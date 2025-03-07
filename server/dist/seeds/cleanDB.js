@@ -1,9 +1,9 @@
-import { Word, Game } from '../models/index.js';
+import { Trade, User } from '../models/index.js';
 const cleanDB = async () => {
     try {
-        await Game.deleteMany({});
+        await Trade.deleteMany({});
         console.log('Game collection cleaned.');
-        await Word.deleteMany({});
+        await User.deleteMany({});
         console.log('Word collection cleaned.');
     }
     catch (err) {

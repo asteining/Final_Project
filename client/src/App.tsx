@@ -1,18 +1,18 @@
 import './App.css';
 import { Outlet } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import LoginPage from './components//Login/LoginPage';
+import TradePage from './components/Trade/TradePage';
 
 
 function App() {
   return (
     <div className="flex-column justify-flex-start min-100-vh">
-      <Header />
+      <LoginPage />
       <div className="container">
         <Outlet />
       </div>
-      <Footer />
+      <TradePage />
     </div>
   );
 }

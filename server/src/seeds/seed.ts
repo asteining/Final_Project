@@ -1,5 +1,5 @@
 import db from '../config/connection.js';
-import { Word } from '../models/index.js';
+import { Trade } from '../models/index.js';
 import cleanDB from './cleanDB.js';
 
 import wordData from './wordSeeds.json' with { type: 'json' };
@@ -9,7 +9,7 @@ try {
   await cleanDB();
 
   // bulk create each model
-  await Word.insertMany(wordData);
+  await Trade.insertMany(wordData);
 
   console.log('Seeding completed successfully!');
   process.exit(0);

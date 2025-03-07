@@ -1,4 +1,4 @@
-import type { Game } from '../models/Game.js';
+import type { Game } from '../models/Trade.js';
 
 export const getInitialGameState = async (): Promise<Game> => {
   try {
