@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function LoginPage() {
+const HomePage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function LoginPage() {
     const data = await res.json();
     if (data.token) {
       localStorage.setItem('token', data.token);
-      navigate('/');
+      navigate('/dashboard');
     } else {
       alert('Login failed.');
     }
@@ -23,12 +23,26 @@ function LoginPage() {
 
   return (
     <div>
-      <h1>Login to TradeSmart</h1>
-      <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-      <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      <h2>Login</h2>
+      <div>
+        <input 
+          type="text" 
+          placeholder="Username" 
+          value={username} 
+          onChange={(e) => setUsername(e.target.value)} 
+        />
+      </div>
+      <div>
+        <input 
+          type="password" 
+          placeholder="Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+        />
+      </div>
       <button onClick={handleLogin}>Login</button>
     </div>
   );
-}
+};
 
-export default LoginPage;
+export default HomePage;

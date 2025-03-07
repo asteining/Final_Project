@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
-import TradePage from './components/Trade/TradePage';
-import LoginPage from './components/Login/LoginPage';
+import HomePage from './Pages/HomePage';
+import Dashboard from './Pages/Dashboard';
 import ErrorPage from './components/Error/Error';
 
 const router = createBrowserRouter([
@@ -11,8 +11,8 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { path: 'login', element: <LoginPage /> },
-      { path: '/', element: <TradePage /> },
+      { path: '/', element: <HomePage /> },
+      { path: '/dashboard', element: <Dashboard /> },
     ],
   },
 ]);
