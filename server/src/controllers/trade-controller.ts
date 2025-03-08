@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { User } from '../models/User';
-import { Trade } from '../models/Trade';
-import { executeTrade } from '../services/tradeServices';
+import { User } from '../models/User.js';
+import { Trade } from '../models/Trade.js';
+import { executeTrade } from '../services/tradeServices.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'secret';
 

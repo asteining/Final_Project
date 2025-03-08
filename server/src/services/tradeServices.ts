@@ -1,5 +1,5 @@
-import { Trade } from '../models/Trade';
-import { User } from '../models/User';
+import { Trade } from '../models/Trade.js';
+import { User } from '../models/User.js';
 
 export const getCurrentStockPrice = (symbol: string): number => {
   // Replace with a real API call if desired.
