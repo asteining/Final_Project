@@ -1,0 +1,14 @@
+[
+    {
+        "tradeType": "BUY",
+        "price": 150.5,
+        "shares": 10,
+        "symbol": "AAPL"
+    },
+    {
+        "tradeType": "SELL",
+        "price": 152.0,
+        "shares": 5,
+        "symbol": "AAPL"
+    }
+]

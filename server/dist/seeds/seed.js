@@ -1,13 +1,23 @@
 import db from '../config/connection.js';
-import { Trade } from '../models/index.js';
+import { User, Trade } from '../models/index.js';
 import cleanDB from './cleanDB.js';
-import wordData from './wordSeeds.json' with { type: 'json' };
+// Import the JSON data. (Using assert syntax for ESM.)
+import userData from './userSeeds.json' with { type: 'json' };
+import tradeData from './tradeSeeds.json' with { type: 'json' };
 try {
     await db();
     await cleanDB();
-    // bulk create each model
-    await Trade.insertMany(wordData);
-    console.log('Seeding completed successfully!');
+    // Seed the User collection
+    const seededUsers = await User.insertMany(userData);
+    console.log('User seeding completed successfully!');
+    // For the Trade collection, assign a valid userId (e.g., the first seeded user)
+    const userId = seededUsers[0]._id;
+    const updatedTradeData = tradeData.map((trade) => ({
+        ...trade,
+        userId
+    }));
+    await Trade.insertMany(updatedTradeData);
+    console.log('Trade seeding completed successfully!');
     process.exit(0);
 }
 catch (error) {
