@@ -4,6 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "build": "npm run client:build && npm run server:build",
     "start": "npm run client:build && npm run server",
     "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
     "server": "cd server && npm start",
@@ -21,7 +22,8 @@
     "test:coverage": "npm run test:component && npm run test:e2e && npm run coverage",
     "clean": "rm -rf .nyc_output && rm -rf coverage && rm -rf server/dist && rm -rf client/dist && rm -rf **/tsconfig.tsbuildinfo",
     "prestart:dev": "npm run clean",
-    "postinstall": "npm run install:all"
+    "postinstall": "npm run install:all",
+    "render:build": "npm install && npm run build && npm run seed"
   },
   "keywords": [],
   "author": "",
