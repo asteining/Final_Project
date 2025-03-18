@@ -41,12 +41,17 @@ app.use(express.json());
 app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
-  const __dirname = path.resolve();
-  // Serve static files from the client/dist directory using an absolute path
-  app.use(express.static(path.join(__dirname, 'client/dist')));
-  // For any other route, send the index.html file from the client/dist directory
+  // Use process.cwd() to get the current working directory (project root)
+  const projectRoot = process.cwd();
+  // Build the absolute path to the client's dist folder
+  const clientDistPath = path.join(projectRoot, 'client', 'dist');
+  
+  // Serve static files from the client/dist folder
+  app.use(express.static(clientDistPath));
+  
+  // For any route not handled, send the index.html file from the client/dist folder
   app.get('*', (_req, res) => {
-    res.sendFile('index.html', { root: path.join(__dirname, 'client/dist') });
+    res.sendFile('index.html', { root: clientDistPath });
   });
 }
 
