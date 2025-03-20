@@ -28,7 +28,6 @@ body {
 /* Header styles */
 header {
   background-color: var(--header-bg);
-  color: var(--header-text);
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -36,19 +35,39 @@ header {
   height: 60px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
+/* Left side of header: logo/site name */
+.header-left {
+  display: flex;
+  align-items: center;
 }
 
-/* The login area in header */
-header .login a {
+.header-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
   color: var(--header-text);
   text-decoration: none;
-  font-weight: 500;
 }
 
-header .login a:hover {
+/* Right side of header: login/logout button */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right .login-btn,
+.header-right .logout-btn {
+  color: var(--header-text);
+  background: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.header-right .login-btn:hover,
+.header-right .logout-btn:hover {
   text-decoration: underline;
 }
 
@@ -66,7 +85,7 @@ header .login a:hover {
   color: #000; /* For contrast inside dashboard */
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .trade-dashboard h1,
@@ -147,6 +166,7 @@ footer {
     flex-direction: column;
     height: auto;
   }
+  
   .trade-form {
     flex-direction: column;
     align-items: stretch;
