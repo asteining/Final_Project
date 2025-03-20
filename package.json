@@ -23,7 +23,8 @@
     "clean": "rm -rf .nyc_output && rm -rf coverage && rm -rf server/dist && rm -rf client/dist && rm -rf **/tsconfig.tsbuildinfo",
     "prestart:dev": "npm run clean",
     "postinstall": "npm run install:all",
-    "render:build": "npm run install:all && npm run build && npm run seed"
+    "render:build": "npm run install:all && npm run build && npm run seed",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "keywords": [],
   "author": "",
