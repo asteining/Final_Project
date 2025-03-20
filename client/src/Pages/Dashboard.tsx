@@ -44,7 +44,7 @@ const TradeDashboard: React.FC = () => {
   // Simulated current stock prices
   const currentPrices: Record<string, number> = {
     AAPL: 150,
-    TSLA: 700,
+    TSLA: 250,
     // Add more symbols as needed…
   };
 
