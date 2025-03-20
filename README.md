@@ -7,6 +7,7 @@
 - Features
 - Technologies Used
 - Installation
+- User Information
 - Screenshots 
 - Links
 - License
@@ -53,6 +54,16 @@
 - Node.js (v14 or later)
 - npm or yarn
 - A MongoDB Atlas account (or a local MongoDB instance)
+
+## User Information
+
+- admin user
+    - username: admin
+    - password: admin
+- test user
+    - username: testuser
+    - password: testpass
+
 
 
 
